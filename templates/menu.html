@@ -1,0 +1,98 @@
+{% extends "styles.html" %}
+
+{% block title %}Menu | Bella Vista{% endblock %}
+
+{% block content %}
+<header class="panel">
+    <h2>Menu</h2>
+    <p>Our menu is simple, with a few classic Italian dishes made fresh each day.</p>
+    <p>We keep the menu easy, the ingredients fresh, and the dining room welcoming.</p>
+</header>
+<div class="appitizers">
+    <h3>Appetizers</h3>
+    <p>Start your meal with a light and flavorful appetizer.</p>
+    <style>
+        .appitizers {
+            font-size: 50px;
+            color:white;
+        }
+    </style>
+</div>
+<div class="meal">
+    <h3>Main Courses</h3>
+    <p>Our main courses are made with fresh pasta, quality ingredients, and more.</p>
+    <style>
+        .meal {
+            font-size: 50px;
+            color:white;
+        }
+    </style>
+</div>
+<section class="panel-rect1">
+    <h3>Spaghetti Pomodoro</h3>
+    <p>Fresh spaghetti with a simple tomato sauce, basil, and parmesan.</p>
+    <button class="add-to-cart">Add to cart</button>
+    <script>
+        // add to cart button functionality and redirect to add_to_cart page
+        document.querySelector('.add-to-cart').addEventListener('click', function() {
+            window.location.href = "{{ url_for('add_to_cart') }}";
+        });
+    </script>
+</section>
+<section class="panel-rect2">
+    <h3>Fettuccine Alfredo <p>price:20.00</p></h3>
+    <p>Fresh fettuccine with a creamy parmesan sauce and a touch of garlic.</p>
+    <button class="add-to-cart">Add to cart</button>
+    <script>
+        // add to cart button functionality and redirect to add_to_cart page
+        document.querySelector('.add-to-cart').addEventListener('click', function() {
+            window.location.href = "{{ url_for('add_to_cart') }}";
+        });
+    </script>
+</section>
+<section class="panel-rect3">
+    <h3>Caprese Salad <p>price:15.00</p></h3>
+    <p>Fresh mozzarella, ripe tomatoes, basil, and a drizzle of balsamic glaze.</p>
+    <button class="add-to-cart">Add to cart</button>
+    <script>
+        // add to cart button functionality and redirect to add_to_cart page
+        document.querySelector('.add-to-cart').addEventListener('click', function() {
+            window.location.href = "{{ url_for('add_to_cart') }}";
+        });
+    </script>
+</section>
+<section class="panel-rect4">
+    <h3>Tiramisu <p>price:30.00</p></h3>
+    <p>Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.</p>
+    <button class="add-to-cart">Add to cart</button>
+    <script>
+        // add to cart button functionality and redirect to add_to_cart page
+        document.querySelector('.add-to-cart').addEventListener('click', function() {
+            window.location.href = "{{ url_for('add_to_cart') }}";
+        });
+    </script>
+</section>
+<div class="desert">
+    <h3>Desert</h3>
+    <p>Our desserts are made fresh daily and are the perfect way to end your meal.</p>
+    <style>
+        .desert {
+            font-size: 50px;
+            color:white;
+        }
+    </style>
+</div>
+<section class="panel-rect5">
+    <h3>Tiramisu <p>price:30.00</p></h3>
+    <p>Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.</p>
+    <button class="add-to-cart">Add to cart</button>
+    <script>
+        // add to cart button functionality and redirect to add_to_cart page
+        document.querySelector('.add-to-cart').addEventListener('click', function() {
+            window.location.href = "{{ url_for('add_to_cart') }}";
+        });
+    </script>
+</section>
+</div>
+
+{% endblock %}

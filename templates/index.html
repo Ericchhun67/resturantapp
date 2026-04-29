@@ -1,0 +1,67 @@
+{% extends "styles.html" %}
+
+{% block title %}Home | Bella Vista{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <h2>Welcome to Bella Vista</h2>
+    <p>Fresh pasta, classic sauces, crisp salads, and homemade desserts.</p>
+    <p>Enjoy a simple neighborhood dinner with warm service and quality ingredients.</p>
+    <button class="See_our_menu-button"><a class="button-link" href="{{ url_for('menu') }}">See the Menu</a></button>
+    <style>
+        .See_our_menu-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            text-align: center;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .See_our_menu-button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-link {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</section>
+<div class="food-pic">
+    <style>
+        /* display food images in the center-middle of the screen  */
+        .food-pic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+
+    <!-- A few images add to the home page's  -->
+    <button class="next_button" onclick="currentImageIndex = (currentImageIndex + 1) % images.length; showImage(currentImageIndex);">Next</button>
+        <img src="{{ url_for('static', filename='img/Spaghetti_Pomodoro.png') }}" style="width: 700px;" height="600px" alt="Food 1">
+        <img src="{{ url_for('static', filename='img/Fettuccine_alfredo.png') }}" style="width: 700px;" height="600px" alt="Food 2">
+        <img src="{{ url_for('static', filename='img/Caprese_Salad.png') }}" style="width: 700px;" height="600px" alt="Food 3">
+    <button class="prev_button" onclick="currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; showImage(currentImageIndex);">Previous</button>
+    <script>
+        // add a slideshow of food images on the home page and add a next and previous button to the slideshow
+        var images = document.querySelectorAll('.food-pic img');
+        var currentImageIndex = 0;
+        function showImage(index) {
+            images.forEach(function(img, i) {
+                img.style.display = (i === index) ? 'inline' : 'none';
+            });
+        }
+        showImage(currentImageIndex);
+    </script>
+    <div>
+    </div>
+</div>
+{% endblock %}

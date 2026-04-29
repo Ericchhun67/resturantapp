@@ -1,0 +1,50 @@
+{% extends "styles.html" %}
+
+{% block content %}
+    <h1>Your Cart</h1>
+    <div class="cart-container">
+        {% if cart %}
+            {% for cart_item in cart %}
+                <div class="cart-item">
+                    <span>{{ cart_item.item }}</span>
+                    <span>Qty: {{ cart_item.quantity }}</span>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+
+        <a class="back-link" href="{{ url_for('menu') }}">Back to Menu</a>
+
+    </div>
+    <style>
+        .cart-container {
+            max-width: 520px;
+            margin: 24px auto;
+            padding: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}

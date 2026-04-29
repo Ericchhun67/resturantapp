@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bella Vista{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="site-container">
+  <header class="site-header">
+        <style>
+            .site-header {
+                background-color: #ffffff;
+                padding: 100px;
+                text-align: center;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 20px;
+                border: 1px solid #ccc;
+                height: 50px;
+            }
+        </style>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+            <script>
+                // search button functionality to search for menu items and redirect to menu page with search query
+                document.querySelector('.search-bar button').addEventListener('click', function() {
+                    var query = document.querySelector('.search-bar input').value;
+                    window.location.href = "{{ url_for('menu') }}?search=" + encodeURIComponent(query);
+                });
+            </script>
+            <style>
+                /* search bar top-right of the corner */
+                .search-bar {
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+                    border-radius: 20px;
+                }
+                .search-bar input {
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+                .search-bar button {
+                    padding: 8px 16px;
+                    border: none;
+                    background-color: #007bff;
+                    color: white;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+                }
+                .search-bar button:hover {
+                    background-color: #0056b3;
+                }
+            </style>
+        </div>
+        <div class="site-shell">
+            <div>
+                <h1 class="site-title">Bella Vista</h1>
+                <p class="site-tagline">Simple Italian restaurant</p>
+            </div>
+            <nav class="site-nav">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('menu') }}">Menu</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('reservations') }}">Reservations</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+            </nav>
+            <style>
+                .site-nav {
+                    margin-top: 16px;
+                }
+                .site-nav a {
+                    margin: 0 8px;
+                    text-decoration: none;
+                    color: #333;
+                    font-weight: bold;
+                }
+                .site-nav a:hover {
+                    color: #007bff;
+                }
+            </style>
+            <nav class="site-auth">
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+                <a href="{{ url_for('view_cart') }}">Cart</a>
+            </nav>
+            <style>
+             /* move auth login and register to the top-right corner under the search bar */
+                .site-auth {
+                    position: absolute;
+                    top: 60px;
+                    right: 16px;
+                }
+                .site-auth a {
+                    margin: 0 8px;
+                    text-decoration: none;
+                    color: #333;
+                    font-weight: bold;
+                }
+                .site-auth a:hover {
+                    color: #007bff;
+                }
+            </style>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+    </header>
+    <footer class="site-footer">
+        <p>&copy; 2024 Bella Vista. All rights reserved.</p>
+</body>
+</html>

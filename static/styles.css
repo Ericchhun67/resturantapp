@@ -1,0 +1,58 @@
+
+.panel {
+    text-align: center;
+    color: white;
+}
+
+.panel_contact {
+    text-align: center;
+    color: white;
+}
+
+body {
+    /* add background image */
+    background-image: url("../static/img/background_img.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* rectangle border menu */
+.panel-rect1 {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    color: white;
+}
+
+.panel-rect2 {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    color: white;
+}
+
+.panel-rect3 {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    color: white;
+}
+
+
+.panel-rect4 {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    color: white;
+}
+
+.site-footer {
+    color: white;
+}
+
+
